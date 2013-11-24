@@ -1,0 +1,35 @@
+<title> Least Squares Regression for Models Linear in the Fit Parameters</title>
+
+	<abstract>  Given a model $f\left(a,x\right)=y$ that relates $x$ to $y$ through model parameter $a$ and a set of measurements $\left{\left(x_i,y_i,\sigma_{y_i}\right)\right}$ obeying Gaussian statistics, we relate the measurements to the best, or <i>maximally probable</i>, model parameter for models linear in $a$. </abstract>
+
+Our model relates $x$ to $y$ through $a$.
+
+$$ f\left(a,x\right)=y $$
+
+We have multiple redundant measurements.
+
+$$ \left{\left(x_i,y_i,\sigma_{y_i}\right)\right}  $$
+
+Our measurements of $x$ are precise and accurate enough to disregard error.
+
+Each measurement of $y$ is Gaussian distributed about mean $f\left(a,x\right)$ for some yet to be determined $a$.
+
+$$  p\left(y\right) = \frac{1}{\sqrt{2\pi\sigma_{y}^2}}e^{-\frac{\left(y-f\left(a,x\right)\right)^2}{2\sigma_y^2}} $$
+
+What value of the model parameter $a$ best describes our measurements $\left{\left(x_i,y_i,\sigma_{y_i}\right)\right}$?  We need to define <i>best</i>.  We define best as the $a$ that maximizes the probability of yielding our measurements given our assumptions about their statistics.
+
+The probability of measuring $\left{\left(x_i,y_i\right)\right}$ (any other set of values was also possible) is 
+
+$$ p\left(\left{\left(x_i,y_i\right)\right}\right) = A \exp\left(-\frac{1}{2}\sum_i\frac{\left(y_i-f\left(a,x_i\righ)\right)^2}{\sigma_{y_i}^2}\right), $$
+
+where $A$ is a normalization coefficient (specifically $A = \frac{1}{\sqrt{2\pi\sum_i\frac{1}{\sigma_i^2}}}$).
+
+To maximize the probability, maximize the argument of the exponent or minimize
+
+$$ \chi^2 \equiv \sum_i\frac{\left(y_i-f\left(a,x_i\righ)\right)^2}{\sigma_{y_i}^2}, $$
+
+which we call $\chi^2$.
+
+We minimize $\chi^2$ with respect to $a$,
+
+$$ \frac{\textrm{d}}{\textrm{d}a}\chi^2 = 0. $$
